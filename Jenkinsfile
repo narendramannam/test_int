@@ -78,7 +78,7 @@ pipeline {
                 expression {
                     WHICH_APP == "both"
                 }
-                steps {
+                steps{
                     sh '''
                         #docker stop webapp01
                         #docker rm -f webapp01
@@ -94,7 +94,7 @@ pipeline {
                 expression {
                     WHICH_APP == "app1"
                 }
-                steps {
+                steps{
                     sh '''
                         #docker stop webapp01
                         #docker rm -f webapp01
@@ -108,7 +108,7 @@ pipeline {
                 expression {
                     WHICH_APP == "app2"
                 }
-                steps {
+                steps{
                     sh '''
                         #docker stop webapp02
                         #docker rm -f webapp02
@@ -122,7 +122,7 @@ pipeline {
                 expression {
                     WHICH_APP == "none"
                 }
-                steps {
+                steps{
                     sh 'echo "No container terminated as option selected is none"'
                 }
             }
