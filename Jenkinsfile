@@ -73,22 +73,22 @@ pipeline {
                 }
             }
         }
-        // stage('kill both apps based on choice'){
-        //     when {
-        //         expression {
-        //             WHICH_APP == "both"
-        //         }
-        //         steps{
-        //             sh '''
-        //                 #docker stop webapp01
-        //                 #docker rm -f webapp01
-        //                 #docker stop webapp02
-        //                 #docker rm -f webapp02
-        //                 echo "both apps are terminated"
-        //             '''
-        //         }
-        //     }
-        // }
+        stage('kill both apps based on choice'){
+            when {
+                expression {
+                    WHICH_APP == "both"
+                }
+                steps{
+                    sh '''
+                        #docker stop webapp01
+                        #docker rm -f webapp01
+                        #docker stop webapp02
+                        #docker rm -f webapp02
+                        echo "both apps are terminated"
+                    '''
+                }
+            }
+        }
         // stage('kill only app1 based on choice'){
         //     when {
         //         expression {
