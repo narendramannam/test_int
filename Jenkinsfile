@@ -78,6 +78,7 @@ pipeline {
                 expression {
                     WHICH_APP == "both"
                 }
+            }
                 steps{
                     sh '''
                         #docker stop webapp01
