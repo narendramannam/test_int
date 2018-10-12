@@ -4,6 +4,12 @@ pipeline {
             label 'master'
         }
     }
+    parameters {
+        choice(
+            choices: ['app1' , 'app2', 'both', 'none'],
+            description: 'choose app to terminate',
+            name: 'WHICH_APP')
+        }
     stages {
         stage('build dockerimage'){
             parallel {
@@ -67,18 +73,6 @@ pipeline {
                 }
             }
         }
-        stage('choose option'){
-            parameters {
-        choice(
-            choices: ['app1' , 'app2', 'both', 'none'],
-            description: 'choose app to terminate',
-            name: 'WHICH_APP')
-        }
-        stepts{
-            sh 'echo "option selected $WHICH_APP"'
-        }
-        }
-        
         // stage('kill both apps based on choice'){
         //     when {
         //         expression {
