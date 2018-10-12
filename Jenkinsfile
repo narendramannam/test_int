@@ -73,60 +73,60 @@ pipeline {
                 }
             }
         }
-        stage('kill both apps based on choice'){
-            when {
-                expression {
-                    WHICH_APP == "both"
-                }
-                steps{
-                    sh '''
-                        #docker stop webapp01
-                        #docker rm -f webapp01
-                        #docker stop webapp02
-                        #docker rm -f webapp02
-                        echo "both apps are terminated"
-                    '''
-                }
-            }
-        }
-        stage('kill only app1 based on choice'){
-            when {
-                expression {
-                    WHICH_APP == "app1"
-                }
-                steps{
-                    sh '''
-                        #docker stop webapp01
-                        #docker rm -f webapp01
-                        echo "app1 is now terminated"
-                    '''
-                }
-            }
-        }
-        stage('kill only app2 based on choice'){
-            when {
-                expression {
-                    WHICH_APP == "app2"
-                }
-                steps{
-                    sh '''
-                        #docker stop webapp02
-                        #docker rm -f webapp02
-                        echo "app2 is now terminated"
-                    '''
-                }
-            }
-        }
-        stage('kill none based on choice'){
-            when {
-                expression {
-                    WHICH_APP == "none"
-                }
-                steps{
-                    sh 'echo "No container terminated as option selected is none"'
-                }
-            }
-        }
+        // stage('kill both apps based on choice'){
+        //     when {
+        //         expression {
+        //             WHICH_APP == "both"
+        //         }
+        //         steps{
+        //             sh '''
+        //                 #docker stop webapp01
+        //                 #docker rm -f webapp01
+        //                 #docker stop webapp02
+        //                 #docker rm -f webapp02
+        //                 echo "both apps are terminated"
+        //             '''
+        //         }
+        //     }
+        // }
+        // stage('kill only app1 based on choice'){
+        //     when {
+        //         expression {
+        //             WHICH_APP == "app1"
+        //         }
+        //         steps{
+        //             sh '''
+        //                 #docker stop webapp01
+        //                 #docker rm -f webapp01
+        //                 echo "app1 is now terminated"
+        //             '''
+        //         }
+        //     }
+        // }
+        // stage('kill only app2 based on choice'){
+        //     when {
+        //         expression {
+        //             WHICH_APP == "app2"
+        //         }
+        //         steps{
+        //             sh '''
+        //                 #docker stop webapp02
+        //                 #docker rm -f webapp02
+        //                 echo "app2 is now terminated"
+        //             '''
+        //         }
+        //     }
+        // }
+        // stage('kill none based on choice'){
+        //     when {
+        //         expression {
+        //             WHICH_APP == "none"
+        //         }
+        //         steps{
+        //             sh 'echo "No container terminated as option selected is none"'
+        //         }
+        //     }
+        // }
                
     
     }
