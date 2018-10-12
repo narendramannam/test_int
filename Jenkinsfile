@@ -89,7 +89,6 @@ pipeline {
                     '''
                 }
             }
-        }
         stage('kill only app1 based on choice'){
             when {
                 expression {
@@ -104,7 +103,6 @@ pipeline {
                     '''
                 }
             }
-        }
         stage('kill only app2 based on choice'){
             when {
                 expression {
@@ -119,7 +117,6 @@ pipeline {
                     '''
                 }
             }
-        }
         stage('kill none based on choice'){
             when {
                 expression {
@@ -136,7 +133,6 @@ pipeline {
                 '''
             }
         }
-    }
     }
                
 }
