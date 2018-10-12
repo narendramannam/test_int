@@ -81,11 +81,13 @@ pipeline {
                     WHICH_APP == "both"
                 }
                 steps {
-                    #docker stop webapp01
-                    #docker rm -f webapp01
-                    #docker stop webapp02
-                    #docker rm -f webapp02
-                    echo "both apps are terminated"
+                    sh '''
+                        #docker stop webapp01
+                        #docker rm -f webapp01
+                        #docker stop webapp02
+                        #docker rm -f webapp02
+                        echo "both apps are terminated"
+                    '''
                 }
             }
         }
@@ -95,9 +97,11 @@ pipeline {
                     WHICH_APP == "app1"
                 }
                 steps {
-                    #docker stop webapp01
-                    #docker rm -f webapp01
-                    echo "app1 is now terminated"
+                    sh '''
+                        #docker stop webapp01
+                        #docker rm -f webapp01
+                        echo "app1 is now terminated"
+                    '''
                 }
             }
         }
@@ -107,9 +111,11 @@ pipeline {
                     WHICH_APP == "app2"
                 }
                 steps {
-                    #docker stop webapp02
-                    #docker rm -f webapp02
-                    echo "app2 is now terminated"
+                    sh '''
+                        #docker stop webapp02
+                        #docker rm -f webapp02
+                        echo "app2 is now terminated"
+                    '''
                 }
             }
         }
@@ -119,7 +125,7 @@ pipeline {
                     WHICH_APP == "none"
                 }
                 steps {
-                    echo "No container terminated as option selected is none"
+                    sh 'echo "No container terminated as option selected is none"'
                 }
             }
         }
