@@ -117,7 +117,7 @@ pipeline {
                 }
             }
         }
-        stage('kill only app2 based on choice'){
+        stage('kill none based on choice'){
             when {
                 expression {
                     WHICH_APP == "none"
